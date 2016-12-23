@@ -165,6 +165,11 @@ const Sortable = React.createClass({
 
     // start listening mousemove and mouseup
     this.bindEvent();
+    
+    // sort starts, callback fires
+    if (isFunction(this.props.onStart)) {
+      this.props.onStart(index);
+    }
   },
 
   /**
